@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+<!-- base.html se start krte huwe -->
+{% block title %} Update-MyTodo {% endblock %} {% block body %}
+
+<div class="container">
+    <br><br>
+    <h4>Update Your todos</h4>
+
+    <form method='POST' action='/update/{{todo.sno}}'>
+        <div class="mb-3">
+            <label for="title" class="form-label">Todo Title</label>
+            <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp" value="{{todo.title}}" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Todo Description</label>
+            <input type="text" class="form-control" id="desc" name="desc" value="{{todo.desc}}" required>
+        </div>
+
+        <button type="submit" class="btn btn-warning">Update</button>
+    </form>
+
+
+</div>
+
+{% endblock %}
